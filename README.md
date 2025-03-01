@@ -44,4 +44,4 @@ This project demonstrates practical networking skills in configuring a scalable,
 18. Configure firewall policies using ACL to allow every communication in the network.
 19. Configure DHCP, DNS and WEB servers on the DMZ
 20. Go to inside PC and request IP, try to access web server using the domain name.
-21. Ping from outside to inside and vice-versa
+21. Ping from outside to inside and vice-versa.
