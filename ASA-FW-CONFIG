@@ -1,0 +1,134 @@
+ASA Firewall Configurations
+
+--------------------------------------------
+
+Building configuration...
+Cryptochecksum: ffffffffdf6f82b6 7f5109c5 ffffffffaebf37dd 55f75ad7
+
+2635  bytes copied in 1.242 secs (2121 bytes/sec)
+[OK]
+PERIMETER-FW#
+PERIMETER-FW#
+PERIMETER-FW#sh run
+: Saved
+:
+ASA Version 9.6(1)
+!
+hostname PERIMETER-FW
+enable password 4IncP7vTjpaba2aF encrypted
+names
+!
+interface GigabitEthernet1/1
+ nameif INSIDE
+ security-level 100
+ ip address 10.10.10.1 255.255.255.252
+!
+interface GigabitEthernet1/2
+ nameif OUTSIDE
+ security-level 0
+ ip address 20.20.20.1 255.255.255.252
+!
+interface GigabitEthernet1/3
+ nameif DMZ
+ security-level 60
+ ip address 172.16.10.1 255.255.255.240
+!
+interface GigabitEthernet1/4
+ no nameif
+ no security-level
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/5
+ no nameif
+ no security-level
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/6
+ no nameif
+ no security-level
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/7
+ no nameif
+ no security-level
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/8
+ no nameif
+ no security-level
+ no ip address
+ shutdown
+!
+interface Management1/1
+ management-only
+ no nameif
+ no security-level
+ no ip address
+ shutdown
+!
+object network DMZ-OUTSIDE
+ subnet 172.16.10.0 255.255.255.240
+ nat (DMZ,OUTSIDE) dynamic interface
+object network INSIDE-OUT
+ subnet 192.168.100.0 255.255.255.0
+ nat (INSIDE,OUTSIDE) dynamic interface
+!
+route OUTSIDE 0.0.0.0 0.0.0.0 20.20.20.2 1
+!
+access-list DMZ-ACCESS extended permit icmp any any
+access-list DMZ-ACCESS extended permit tcp any any eq www
+access-list DMZ-ACCESS extended permit tcp any any eq 8080
+access-list DMZ-ACCESS extended permit tcp any any eq domain
+access-list DMZ-ACCESS extended permit udp any any eq domain
+access-list DMZ-ACCESS extended permit udp any any eq bootps
+access-list DMZ-ACCESS extended permit udp any any eq bootpc
+access-list INTERNET-ACCESS extended permit icmp any any
+access-list INTERNET-ACCESS extended permit tcp any any eq domain
+access-list INTERNET-ACCESS extended permit udp any any eq domain
+access-list INTERNET-ACCESS extended permit tcp any any eq www
+access-list INTERNET-ACCESS extended permit tcp any any eq 8080
+!
+!
+access-group DMZ-ACCESS in interface DMZ
+access-group INTERNET-ACCESS in interface OUTSIDE
+aaa authentication ssh console LOCAL
+!
+username admin password 4IncP7vTjpaba2aF encrypted
+!
+class-map inspection_default
+ match default-inspection-traffic
+!
+policy-map type inspect dns preset_dns_map
+ parameters
+  message-length maximum 512
+policy-map global_policy
+ class inspection_default
+  inspect dns preset_dns_map
+  inspect ftp 
+  inspect tftp 
+!
+service-policy global_policy global
+!
+telnet timeout 5
+ssh 192.168.100.0 255.255.255.0 INSIDE
+ssh timeout 3
+!
+dhcpd dns 8.8.8.8
+!
+dhcpd address 172.16.10.2-172.16.10.14 DMZ
+dhcpd enable DMZ
+!
+!
+!
+!
+router ospf 50
+ router-id 2.1.2.1
+ log-adjacency-changes
+ network 172.16.10.0 255.255.255.240 area 0
+ network 20.20.20.0 255.255.255.252 area 0
+ network 10.10.10.0 255.255.255.252 area 0
+!
