@@ -2,7 +2,7 @@
 
 Cisco Packet Tracer Network Project Overview
 
-![Screenshot 2025-02-28 at 10 46 37 PM](https://github.com/user-attachments/assets/1b58e841-c174-405a-bad4-ec298ca3928d)
+![Screenshot 2025-02-28 at 11 06 47 PM](https://github.com/user-attachments/assets/be120f61-f5d2-451b-9f01-b9efe37824ca)
 
 This project showcases the design and implementation of a secure and fully functional enterprise network using Cisco Packet Tracer. The network is built with OSPF routing, static default routing, DHCP, SSH security, and firewall policies, ensuring efficient connectivity and security across multiple segments.
 
