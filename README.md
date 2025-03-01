@@ -20,7 +20,7 @@ Key Configurations:
 
 This project demonstrates practical networking skills in configuring a scalable, secure, and well-documented network. 🚀
 
--------- Config + OSPF + DEFAULT STATIC ROUTING CONFIGS--------
+-------- CONFIGS + OSPF + DEFAULT STATIC ROUTING CONFIGS--------
 
 1. Draw necessary topology, decorate and comment
 2. ﻿﻿﻿Configure hostname, enable passwords, username and password, and clock and date.
@@ -44,7 +44,7 @@ This project demonstrates practical networking skills in configuring a scalable,
 13. ﻿﻿﻿Define the subnets or IPs which are allowed to SSH onto ASA.
 14. ﻿﻿﻿Specify SSH tmeout---try out
 
----------- BASIC FIREWALL POLICIES CONFIGS ----------
+---------- FIREWALL POLICIES CONFIGS ----------
 
 15. Draw necessary topology, decorate and comment
 16. Ensure to complete the last stage above (of routing configs).
