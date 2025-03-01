@@ -9,9 +9,13 @@ This project showcases the design and implementation of a secure and fully funct
 Key Configurations:
 
 🔹 Routing & Network Configuration: The topology includes an inside router, an outside router, and a firewall, with OSPF and default static routes ensuring proper data flow.
+
 🔹 DHCP Implementation: Configuring dynamic IP addressing for internal hosts, along with DNS setup and DHCP relay through the firewall.
+
 🔹 SSH Security: Securing remote access using AAA authentication, RSA key generation, and IP-based SSH access control.
+
 🔹 Firewall Policies & NAT: Setting up Network Address Translation (NAT) for internal hosts and Access Control Lists (ACLs) to regulate traffic between inside, DMZ, and external networks.
+
 🔹 DMZ Services: Deploying DHCP, DNS, and Web Servers within a DMZ to support internal and external connectivity, tested through domain-based access and ping verification.
 
 This project demonstrates practical networking skills in configuring a scalable, secure, and well-documented network. 🚀
