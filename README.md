@@ -37,7 +37,7 @@ This project demonstrates practical networking skills in configuring a scalable,
 
 ------- SSH CONFIGS --------
 
-9. Ensure steps 283 under basic configs are completed.
+9. Ensure steps 2&3 under basic configs are completed.
 10. ﻿﻿﻿Ensure inside hosts can ping firewall.
 11. ﻿﻿﻿Enable LOCAL aaa authentication for username to SSH onto ASA
 12. ﻿﻿﻿Generate RSA key pair
