@@ -17,6 +17,7 @@ Key Configurations:
 This project demonstrates practical networking skills in configuring a scalable, secure, and well-documented network. 🚀
 
 -------- Config + OSPF + DEFAULT STATIC ROUTING CONFIGS--------
+
 1. Draw necessary topology, decorate and comment
 2. ﻿﻿﻿Configure hostname, enable passwords, username and password, and clock and date.
 3. ﻿﻿﻿Configure IP addresses, names, and security level to the interfaces.
@@ -24,12 +25,14 @@ This project demonstrates practical networking skills in configuring a scalable,
 5. ﻿﻿﻿Configure default static routing on the outside router and the firewall
 
 -------- DHCP CONFIGS --------
+
 6. Configure address ranges to be issued
 7. ﻿﻿﻿Configure DNS server
 8. ﻿﻿﻿Enable DHCP on the firewall interface.
 9. ﻿﻿﻿Enable DHCP on the computers
 
 ------- SSH CONFIGS --------
+
 9. Ensure steps 283 under basic configs are completed.
 10. ﻿﻿﻿Ensure inside hosts can ping firewall.
 11. ﻿﻿﻿Enable LOCAL aaa authentication for username to SSH onto ASA
@@ -38,6 +41,7 @@ This project demonstrates practical networking skills in configuring a scalable,
 14. ﻿﻿﻿Specify SSH tmeout---try out
 
 ---------- BASIC FIREWALL POLICIES CONFIGS ----------
+
 15. Draw necessary topology, decorate and comment
 16. Ensure to complete the last stage above (of routing configs).
 17. Configure NAT to translate both INSIDE and DMZ IP when they access internet.
