@@ -1,0 +1,18 @@
+DMZ DCHP Server Configurations
+
+--------------------------------------
+
+1. Click on DCHP Server in the DMZ.
+2. Click on 'Services' on the top bar.
+3. Click on 'DHCP' on the left side bar.
+4. Toggel the 'On' button.
+5. In Pool Name type in 'INSIDE-Pool'
+6. In Default Gateway section type in 192.168.100.1 
+7. In DNS Server section type in 172.16.10.2
+8. In Start IP Address section type in 192.168.100.101
+9. In Subnet Mack section type in 255.255.255.0
+10. In Macimum number of Users type in 100
+11. Click on 'Add'
+!
+!
+End
